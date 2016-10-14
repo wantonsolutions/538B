@@ -7,6 +7,8 @@ import (
 	"strconv"
 	"bufio"
 	"net"
+	t "time"
+	"github.com/hashicorp/go-msgpack/codec"
 )
 
 var (
@@ -23,16 +25,53 @@ var (
 	logger *log.Logger
 )
 
+type Msg struct {
+	Time int64
+}
+
 func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPConn) {
-	logger.Println("Starting")
+	logger.Printf("starting time %d\n",time)
+	var message = Msg{Time: time}
+	for true {
+		time++
+		message.Time = time
+		broadcast(message,slaves)
+		t.Sleep(t.Millisecond)
+	}
+
+
 	return
 }
 
+func broadcast(message Msg, slaves map[string]*net.UDPConn) {
+	logger.Printf("Brodcasting time %d\n",message.Time)
+	buf, err  := encode(message)
+	if err != nil {
+		logger.Fatal(err)
+	}
+	for _, slave := range slaves {
+		slave.Write(buf)
+	}
+}
 
 func slave(conn *net.UDPConn, time int64) {
-	logger.Println("Starting")
+	logger.Printf("starting time %d\n",time)
+	buf := make([]byte,64)
+	var message = new(Msg)
+	for true {
+		n, err := conn.Read(buf)
+		if err != nil {
+			logger.Fatal(err)
+		}
+		decode(buf[0:n],message)
+		logger.Printf("time received %d\n",message.Time)
+		time = message.Time
+	}
+		
 	return
 }
+
+
 
 func main () {
 	flag.Parse()
@@ -58,15 +97,7 @@ func startMaster() {
 	slavesfile = os.Args[5]
 	logfile = os.Args[6]
 	
-	lAddr, err := net.ResolveUDPAddr("udp", ipPort)
-	if err != nil {
-		logger.Fatal(err)
-	}
-	listen, err := net.ListenUDP("udp", lAddr)
-	if err != nil {
-		logger.Fatal(err)
-	}
-
+	listen := listenConnection(ipPort)
 	//setup connections
 	ips := readSlaveFile(slavesfile)
 	slaves := make(map[string]*net.UDPConn,len(ips))
@@ -88,9 +119,9 @@ func startSlave() {
 	time = stoi(os.Args[3])
 	//TODO work in govector
 	logfile = os.Args[4]
-	conn := setupConnection(ipPort)
+	listen := listenConnection(ipPort)
 	logger.SetPrefix("[Slave "+ipPort+"] ")
-	slave(conn, time)
+	slave(listen, time)
 }
 
 func stoi(time string) int64 {
@@ -99,6 +130,19 @@ func stoi(time string) int64 {
 		logger.Fatal(err)
 	}
 	return int64(t)
+}
+
+func listenConnection(ip string) *net.UDPConn {
+	lAddr, err := net.ResolveUDPAddr("udp", ipPort)
+	if err != nil {
+		logger.Fatal(err)
+	}
+	listen, err := net.ListenUDP("udp", lAddr)
+	if err != nil {
+		logger.Fatal(err)
+	}
+	return listen
+
 }
 
 func setupConnection(ip string) *net.UDPConn {
@@ -128,5 +172,28 @@ func readSlaveFile(filename string) []string {
 		logger.Fatal(scanner.Err())
 	}
 	return ips
+}
+
+
+func decode(programData []byte, unpack interface{}) {
+	var dec *codec.Decoder
+	dec = codec.NewDecoderBytes(programData, &codec.MsgpackHandle{})
+	err := dec.Decode(unpack)
+	if err != nil {
+		logger.Fatal("Unable to decode with msg-pack encoder %s", err.Error())
+	}
+}
+
+func encode(buf interface{}) ([]byte, error) {
+	var (
+		b   []byte
+		enc *codec.Encoder
+	)
+	enc = codec.NewEncoderBytes(&b, &codec.MsgpackHandle{})
+	err := enc.Encode(buf)
+	if err != nil {
+		logger.Fatal("Unable to encode with msg-pack encoder %s", err.Error())
+	}
+	return b, err
 }
 
