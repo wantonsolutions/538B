@@ -8,7 +8,7 @@ import (
 	"bufio"
 	"net"
 	t "time"
-	"github.com/hashicorp/go-msgpack/codec"
+	gv "github.com/arcaneiceman/GoVector/govec"
 )
 
 var (
@@ -29,13 +29,13 @@ type Msg struct {
 	Time int64
 }
 
-func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPConn) {
+func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPConn, gvl *gv.GoLog) {
 	logger.Printf("starting time %d\n",time)
 	var message = Msg{Time: time}
 	for true {
 		time++
 		message.Time = time
-		broadcast(message,slaves)
+		broadcast(message,slaves,gvl)
 		t.Sleep(t.Millisecond)
 	}
 
@@ -43,27 +43,24 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPConn) 
 	return
 }
 
-func broadcast(message Msg, slaves map[string]*net.UDPConn) {
+func broadcast(message Msg, slaves map[string]*net.UDPConn, gvl *gv.GoLog) {
 	logger.Printf("Brodcasting time %d\n",message.Time)
-	buf, err  := encode(message)
-	if err != nil {
-		logger.Fatal(err)
-	}
+	buf := gvl.PrepareSend("Broadcasting time ",message)
 	for _, slave := range slaves {
 		slave.Write(buf)
 	}
 }
 
-func slave(conn *net.UDPConn, time int64) {
+func slave(conn *net.UDPConn, time int64 , gvl *gv.GoLog) {
 	logger.Printf("starting time %d\n",time)
-	buf := make([]byte,64)
-	var message = new(Msg)
+	buf := make([]byte,128)
+	var message Msg
 	for true {
 		n, err := conn.Read(buf)
 		if err != nil {
 			logger.Fatal(err)
 		}
-		decode(buf[0:n],message)
+		gvl.UnpackReceive("received time",buf[0:n],&message)
 		logger.Printf("time received %d\n",message.Time)
 		time = message.Time
 	}
@@ -104,9 +101,11 @@ func startMaster() {
 	for _, ip := range ips {
 		slaves[ip] = setupConnection(ip)
 	}
+	name := "[Master "+ipPort+"] "
+	gvl := gv.Initialize(name,logfile)
 	//TODO work in govector
-	logger.SetPrefix("[Master "+ipPort+"] ")
-	master(listen, time, d, slaves)
+	logger.SetPrefix(name)
+	master(listen, time, d, slaves, gvl)
 	return
 }
 
@@ -120,8 +119,11 @@ func startSlave() {
 	//TODO work in govector
 	logfile = os.Args[4]
 	listen := listenConnection(ipPort)
-	logger.SetPrefix("[Slave "+ipPort+"] ")
-	slave(listen, time)
+	name := "[Slave "+ipPort+"] "
+	gvl := gv.Initialize(name,logfile)
+	//TODO work in govector
+	logger.SetPrefix(name)
+	slave(listen, time, gvl)
 }
 
 func stoi(time string) int64 {
@@ -172,28 +174,5 @@ func readSlaveFile(filename string) []string {
 		logger.Fatal(scanner.Err())
 	}
 	return ips
-}
-
-
-func decode(programData []byte, unpack interface{}) {
-	var dec *codec.Decoder
-	dec = codec.NewDecoderBytes(programData, &codec.MsgpackHandle{})
-	err := dec.Decode(unpack)
-	if err != nil {
-		logger.Fatal("Unable to decode with msg-pack encoder %s", err.Error())
-	}
-}
-
-func encode(buf interface{}) ([]byte, error) {
-	var (
-		b   []byte
-		enc *codec.Encoder
-	)
-	enc = codec.NewEncoderBytes(&b, &codec.MsgpackHandle{})
-	err := enc.Encode(buf)
-	if err != nil {
-		logger.Fatal("Unable to encode with msg-pack encoder %s", err.Error())
-	}
-	return b, err
 }
 
