@@ -11,6 +11,19 @@ import (
 	gv "github.com/arcaneiceman/GoVector/govec"
 )
 
+const (
+	SYNCTIME = 1000
+	COALESCE = 100
+)
+
+const (
+	GetTime  = iota
+	RespTime = iota
+	OffsetTime = iota
+	Death = iota
+)
+
+
 var (
 	ismaster = flag.Bool("m", false, "summons a master node")
 	isslave = flag.Bool("s", false, "summons a slave node")
@@ -26,43 +39,126 @@ var (
 )
 
 type Msg struct {
+	Type int
 	Time int64
+	Epoch int64
+	Offset int64
+	Addr *net.UDPAddr
 }
 
-func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPConn, gvl *gv.GoLog) {
-	logger.Printf("starting time %d\n",time)
-	var message = Msg{Time: time}
-	for true {
-		time++
-		message.Time = time
-		broadcast(message,slaves,gvl)
-		t.Sleep(t.Millisecond)
-	}
 
+func smListen(listen *net.UDPConn, msgChan chan Msg, gvl *gv.GoLog) {
+	var message Msg
+	buf := make([]byte,1024)
+	for true {
+		n, addr ,err := listen.ReadFromUDP(buf)
+		if err != nil {
+			message.Type = Death
+			msgChan <- message
+			panic(err)
+		}
+		gvl.UnpackReceive("received time",buf[0:n],&message)
+		message.Addr = addr
+		msgChan <- message
+	}
+}
+
+func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, gvl *gv.GoLog) {
+	logger.Printf("starting time %d\n",time)
+	var epoch int64
+
+	var message = Msg{Time: time}
+	syncTimer := t.After(SYNCTIME *t.Millisecond)
+	coalesceTimer := make(<-chan t.Time)
+	msgChan := make(chan Msg)
+	responses := make(map[string]int64)
+	go smListen(listen, msgChan, gvl)
+
+	for true {
+		select {
+		case m := <-msgChan:
+			switch m.Type {
+			case RespTime:
+				if m.Epoch != epoch {
+					logger.Printf("Hey %s Thats an old epoch, catch up you lazy slave!",m.Addr.String())
+					break
+				}
+				_, ok := slaves[m.Addr.String()]
+				if !ok {
+					logger.Printf("Stop talking %s I don't coordinate slaves not on my roster",m.Addr.String())
+					break
+				}
+				//else it's legitamate
+				logger.Printf("Thank You for the response %s\n",m.Addr.String())
+				responses[m.Addr.String()] = m.Time
+				break
+
+			case GetTime, OffsetTime, Death:
+				logger.Printf("Speak when spoken too, %s\n",m.Addr.String())
+				break
+			}
+			break
+		case <-syncTimer:
+			logger.Printf("Slaves what time is it?\n")
+			//increase the epoch and send out get Time requests
+			epoch++
+			message.Type = GetTime
+			message.Time = 0
+			message.Epoch = epoch
+			broadcast(listen,message,slaves,gvl)
+			coalesceTimer = t.After(COALESCE *t.Millisecond)
+			break
+		case <- coalesceTimer:
+			time++
+			logger.Printf("Your all wrong the time is %d\n",time)
+			message.Type = OffsetTime
+			message.Epoch = epoch
+			message.Offset = time
+			broadcast(listen,message,slaves,gvl)
+			syncTimer = t.After(SYNCTIME *t.Millisecond)
+			break
+		}
+	}
 
 	return
 }
 
-func broadcast(message Msg, slaves map[string]*net.UDPConn, gvl *gv.GoLog) {
-	logger.Printf("Brodcasting time %d\n",message.Time)
+func broadcast(conn *net.UDPConn, message Msg, slaves map[string]*net.UDPAddr, gvl *gv.GoLog) {
 	buf := gvl.PrepareSend("Broadcasting time ",message)
 	for _, slave := range slaves {
-		slave.Write(buf)
+		conn.WriteToUDP(buf,slave)
 	}
 }
 
+
 func slave(conn *net.UDPConn, time int64 , gvl *gv.GoLog) {
 	logger.Printf("starting time %d\n",time)
-	buf := make([]byte,128)
-	var message Msg
+	msgChan := make(chan Msg)
+
+	go smListen(conn, msgChan, gvl)
 	for true {
-		n, err := conn.Read(buf)
-		if err != nil {
-			logger.Fatal(err)
+		select {
+		case m := <- msgChan:
+			switch m.Type {
+			case GetTime:
+				logger.Printf("Master the time is %d\n",time)
+				msg := Msg{Type: RespTime, Time: time, Epoch: m.Epoch, Addr: nil}
+				buf := gvl.PrepareSend("Master here is the time",msg)
+				_, err := conn.WriteToUDP(buf,m.Addr)
+				if err != nil {
+					logger.Panic(err)
+				}
+			case RespTime:
+				logger.Printf("Shh %s I'm not allowed to talk to other slaves\n",m.Addr.String())
+				break
+			case OffsetTime:
+				logger.Printf("Sorry Master I'll fix my time by %d\n",m.Offset)
+				time = time + m.Offset
+				break
+			case Death:
+				break
+			}
 		}
-		gvl.UnpackReceive("received time",buf[0:n],&message)
-		logger.Printf("time received %d\n",message.Time)
-		time = message.Time
 	}
 		
 	return
@@ -97,9 +193,9 @@ func startMaster() {
 	listen := listenConnection(ipPort)
 	//setup connections
 	ips := readSlaveFile(slavesfile)
-	slaves := make(map[string]*net.UDPConn,len(ips))
+	slaves := make(map[string]*net.UDPAddr,len(ips))
 	for _, ip := range ips {
-		slaves[ip] = setupConnection(ip)
+		slaves[ip] = getAddr(ip)
 	}
 	name := "[Master "+ipPort+"] "
 	gvl := gv.Initialize(name,logfile)
@@ -135,7 +231,7 @@ func stoi(time string) int64 {
 }
 
 func listenConnection(ip string) *net.UDPConn {
-	lAddr, err := net.ResolveUDPAddr("udp", ipPort)
+	lAddr, err := net.ResolveUDPAddr("udp", ip)
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -147,16 +243,12 @@ func listenConnection(ip string) *net.UDPConn {
 
 }
 
-func setupConnection(ip string) *net.UDPConn {
+func getAddr(ip string) *net.UDPAddr {
 	rAddr, errR := net.ResolveUDPAddr("udp", ip)
 	if errR != nil {
 		logger.Fatal(errR)
 	}
-	conn, errDial := net.DialUDP("udp", nil, rAddr)
-	if errDial != nil {
-		logger.Fatal(errDial)
-	}
-	return conn
+	return rAddr
 }
 
 func readSlaveFile(filename string) []string {
