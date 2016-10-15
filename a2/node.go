@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"bufio"
 	"net"
+	"math/rand"
 	t "time"
 	gv "github.com/arcaneiceman/GoVector/govec"
 )
@@ -14,6 +15,7 @@ import (
 const (
 	SYNCTIME = 1000
 	COALESCE = 100
+	INCTIME = 10
 )
 
 const (
@@ -111,6 +113,14 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, 
 		case <- coalesceTimer:
 			time++
 			logger.Printf("Your all wrong the time is %d\n",time)
+
+			//compute the average for spoofing
+			total := time
+			for _, val := range responses {
+				total +=val
+			}
+			time = total / int64(len(responses)+1)
+
 			message.Type = OffsetTime
 			message.Epoch = epoch
 			message.Offset = time
@@ -136,6 +146,8 @@ func slave(conn *net.UDPConn, time int64 , gvl *gv.GoLog) {
 	msgChan := make(chan Msg)
 
 	go smListen(conn, msgChan, gvl)
+
+	incTimer := t.After(INCTIME *t.Millisecond)
 	for true {
 		select {
 		case m := <- msgChan:
@@ -153,11 +165,15 @@ func slave(conn *net.UDPConn, time int64 , gvl *gv.GoLog) {
 				break
 			case OffsetTime:
 				logger.Printf("Sorry Master I'll fix my time by %d\n",m.Offset)
-				time = time + m.Offset
+				time = m.Offset
 				break
 			case Death:
 				break
 			}
+		case <-incTimer:
+			time++
+			incTimer = t.After(t.Duration((rand.Int()%INCTIME)) *t.Millisecond)
+			break
 		}
 	}
 		
