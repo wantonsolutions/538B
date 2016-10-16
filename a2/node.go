@@ -7,7 +7,6 @@ import (
 	"strconv"
 	"bufio"
 	"net"
-	"math/rand"
 	t "time"
 	gv "github.com/arcaneiceman/GoVector/govec"
 )
@@ -48,6 +47,15 @@ type Msg struct {
 	Addr *net.UDPAddr
 }
 
+type ClockSync struct {
+	Node *net.UDPAddr
+	Time int64
+	Sent t.Time
+	Received t.Time
+}
+
+
+
 
 func smListen(listen *net.UDPConn, msgChan chan Msg, gvl *gv.GoLog) {
 	var message Msg
@@ -72,8 +80,9 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, 
 	var message = Msg{Time: time}
 	syncTimer := t.After(SYNCTIME *t.Millisecond)
 	coalesceTimer := make(<-chan t.Time)
+	incTimer := t.After(INCTIME *t.Millisecond)
 	msgChan := make(chan Msg)
-	responses := make(map[string]int64)
+	sync := make(map[string]ClockSync)
 	go smListen(listen, msgChan, gvl)
 
 	for true {
@@ -91,8 +100,11 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, 
 					break
 				}
 				//else it's legitamate
-				logger.Printf("Thank You for the response %s\n",m.Addr.String())
-				responses[m.Addr.String()] = m.Time
+				//logger.Printf("Thank You for the response %s\n",m.Addr.String())
+				cs := sync[m.Addr.String()]
+				cs.Received = t.Now()
+				cs.Time = m.Time
+				sync[m.Addr.String()] = cs
 				break
 
 			case GetTime, OffsetTime, Death:
@@ -104,28 +116,61 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, 
 			logger.Printf("Slaves what time is it?\n")
 			//increase the epoch and send out get Time requests
 			epoch++
+			sync = make(map[string]ClockSync)
 			message.Type = GetTime
 			message.Time = 0
 			message.Epoch = epoch
-			broadcast(listen,message,slaves,gvl)
+			//broadcast to nodes
+
+			buf := gvl.PrepareSend("Broadcasting time ",message)
+			for _, slave := range slaves {
+				now := t.Now()
+				//set send and receive to same value and check later
+				//if a message was actually received
+				var cs ClockSync
+				cs.Node = slave
+				cs.Sent = now
+				cs.Received = now
+				sync[slave.String()] = cs
+				listen.WriteToUDP(buf,slave)
+			}
+			//logger.Println(sync)
 			coalesceTimer = t.After(COALESCE *t.Millisecond)
 			break
 		case <- coalesceTimer:
-			time++
-			logger.Printf("Your all wrong the time is %d\n",time)
-
-			//compute the average for spoofing
+			
 			total := time
-			for _, val := range responses {
-				total +=val
+			count := 1
+			logger.Printf("Your all wrong the time is %d\n",time)
+			for _, cs := range sync {
+				if cs.Sent.Equal(cs.Received) {
+					logger.Printf("Hey %s whats the deal, I never heard back from you",cs.Node.String())
+					continue
+				} else {
+					total += cs.Time
+					count ++
+				}
 			}
-			time = total / int64(len(responses)+1)
-
-			message.Type = OffsetTime
-			message.Epoch = epoch
-			message.Offset = time
-			broadcast(listen,message,slaves,gvl)
+			time = total / int64(count)
+			for _, cs := range sync {
+				if cs.Sent.Equal(cs.Received) {
+					continue
+				} else {
+					message.Type = OffsetTime
+					message.Epoch = epoch
+					rtt := cs.Received.Sub(cs.Sent).Nanoseconds()/1000000/INCTIME
+					//logger.Printf("round trip time: %d\n",rtt)
+					message.Offset = time - (int64(cs.Time) + rtt)
+					//logger.Printf("%s offset your time by %d",s,message.Offset)
+					buf := gvl.PrepareSend("Broadcasting time ",message)
+					listen.WriteToUDP(buf,cs.Node)
+				}
+			}
 			syncTimer = t.After(SYNCTIME *t.Millisecond)
+			break
+		case <-incTimer:
+			time++
+			incTimer = t.After(t.Duration(INCTIME) *t.Millisecond)
 			break
 		}
 	}
@@ -164,15 +209,15 @@ func slave(conn *net.UDPConn, time int64 , gvl *gv.GoLog) {
 				logger.Printf("Shh %s I'm not allowed to talk to other slaves\n",m.Addr.String())
 				break
 			case OffsetTime:
-				logger.Printf("Sorry Master I'll fix my time by %d\n",m.Offset)
-				time = m.Offset
+				logger.Printf("Sorry Master I'll fix my time by %d now %d\n",m.Offset,time+m.Offset)
+				time = time+m.Offset
 				break
 			case Death:
 				break
 			}
 		case <-incTimer:
 			time++
-			incTimer = t.After(t.Duration((rand.Int()%INCTIME)) *t.Millisecond)
+			incTimer = t.After(t.Duration(INCTIME) *t.Millisecond)
 			break
 		}
 	}
