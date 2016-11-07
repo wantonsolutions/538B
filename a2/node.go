@@ -78,9 +78,9 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, 
 	var epoch int64
 
 	var message = Msg{Time: time}
-	syncTimer := t.After(SYNCTIME *t.Millisecond)
+	syncTimer := t.After(t.Duration(d * SYNCTIME) *t.Millisecond)
 	coalesceTimer := make(<-chan t.Time)
-	incTimer := t.After(INCTIME *t.Millisecond)
+	incTimer := t.After(t.Duration(INCTIME) *t.Millisecond)
 	msgChan := make(chan Msg)
 	sync := make(map[string]ClockSync)
 	go smListen(listen, msgChan, gvl)
@@ -135,7 +135,7 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, 
 				listen.WriteToUDP(buf,slave)
 			}
 			//logger.Println(sync)
-			coalesceTimer = t.After(COALESCE *t.Millisecond)
+			coalesceTimer = t.After(t.Duration(d *COALESCE) *t.Millisecond)
 			break
 		case <- coalesceTimer:
 			
@@ -166,7 +166,7 @@ func master(listen *net.UDPConn, time, d int64, slaves map[string]*net.UDPAddr, 
 					listen.WriteToUDP(buf,cs.Node)
 				}
 			}
-			syncTimer = t.After(SYNCTIME *t.Millisecond)
+			syncTimer = t.After(t.Duration(d * SYNCTIME) *t.Millisecond)
 			break
 		case <-incTimer:
 			time++

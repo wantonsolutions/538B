@@ -1,0 +1,861 @@
+(?<host>\S*) (?<clock>{.*})\n(?<event>.*)
+
+
+localhost:19000 {"localhost:19000":1}
+Initialization Complete
+localhost:19000 {"localhost:19000":2}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":3}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":4}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":5}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":6}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":7, "localhost:19001":3}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":8, "localhost:19001":3, "localhost:19002":3}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":9, "localhost:19001":3, "localhost:19002":3}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":10, "localhost:19001":4, "localhost:19002":3}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":11, "localhost:19001":4, "localhost:19002":3}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":12, "localhost:19001":7, "localhost:19002":6}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":13, "localhost:19001":7, "localhost:19002":6}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":14, "localhost:19001":7, "localhost:19002":6}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":15, "localhost:19001":7, "localhost:19002":6}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":16, "localhost:19001":7, "localhost:19002":6}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":17, "localhost:19001":7, "localhost:19002":6}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":18, "localhost:19001":13, "localhost:19002":15}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":19, "localhost:19001":13, "localhost:19002":15}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":20, "localhost:19001":13, "localhost:19002":15}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":21, "localhost:19001":15, "localhost:19002":15}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":22, "localhost:19001":16, "localhost:19002":15}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":23, "localhost:19001":16, "localhost:19002":15}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":24, "localhost:19001":19, "localhost:19002":20}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":25, "localhost:19001":19, "localhost:19002":20}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":26, "localhost:19001":19, "localhost:19002":20}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":27, "localhost:19001":19, "localhost:19002":20}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":28, "localhost:19001":19, "localhost:19002":20}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":29, "localhost:19001":19, "localhost:19002":20}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":30, "localhost:19001":25, "localhost:19002":27}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":31, "localhost:19001":25, "localhost:19002":27}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":32, "localhost:19001":25, "localhost:19002":27}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":33, "localhost:19001":27, "localhost:19002":27}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":34, "localhost:19001":28, "localhost:19002":27}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":35, "localhost:19001":28, "localhost:19002":27}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":36, "localhost:19001":31, "localhost:19002":30}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":37, "localhost:19001":31, "localhost:19002":30}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":38, "localhost:19001":31, "localhost:19002":30}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":39, "localhost:19001":31, "localhost:19002":30}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":40, "localhost:19001":31, "localhost:19002":30}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":41, "localhost:19001":31, "localhost:19002":30}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":42, "localhost:19001":31, "localhost:19002":30}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":43, "localhost:19001":31, "localhost:19002":30}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":44, "localhost:19001":39, "localhost:19002":31}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":45, "localhost:19001":39, "localhost:19002":39}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":46, "localhost:19001":40, "localhost:19002":39}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":47, "localhost:19001":40, "localhost:19002":39}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":48, "localhost:19001":43, "localhost:19002":42}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":49, "localhost:19001":43, "localhost:19002":42}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":50, "localhost:19001":43, "localhost:19002":42}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":51, "localhost:19001":43, "localhost:19002":42}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":52, "localhost:19001":43, "localhost:19002":42}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":53, "localhost:19001":43, "localhost:19002":42}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":54, "localhost:19001":43, "localhost:19002":42}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":55, "localhost:19001":43, "localhost:19002":42}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":56, "localhost:19001":51, "localhost:19002":43}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":57, "localhost:19001":51, "localhost:19002":51}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":58, "localhost:19001":52, "localhost:19002":51}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":59, "localhost:19001":52, "localhost:19002":51}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":60, "localhost:19001":55, "localhost:19002":54}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":61, "localhost:19001":55, "localhost:19002":54}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":62, "localhost:19001":55, "localhost:19002":54}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":63, "localhost:19001":55, "localhost:19002":54}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":64, "localhost:19001":55, "localhost:19002":54}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":65, "localhost:19001":55, "localhost:19002":54}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":66, "localhost:19001":63, "localhost:19002":55}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":67, "localhost:19001":63, "localhost:19002":55}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":68, "localhost:19001":63, "localhost:19002":63}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":69, "localhost:19001":63, "localhost:19002":63}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":70, "localhost:19001":64, "localhost:19002":63}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":71, "localhost:19001":64, "localhost:19002":63}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":72, "localhost:19001":67, "localhost:19002":66}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":73, "localhost:19001":67, "localhost:19002":66}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":74, "localhost:19001":67, "localhost:19002":66}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":75, "localhost:19001":67, "localhost:19002":66}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":76, "localhost:19001":67, "localhost:19002":66}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":77, "localhost:19001":67, "localhost:19002":66}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":78, "localhost:19001":67, "localhost:19002":66}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":79, "localhost:19001":67, "localhost:19002":66}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":80, "localhost:19001":75, "localhost:19002":67}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":81, "localhost:19001":75, "localhost:19002":75}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":82, "localhost:19001":76, "localhost:19002":75}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":83, "localhost:19001":76, "localhost:19002":75}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":84, "localhost:19001":79, "localhost:19002":81}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":85, "localhost:19001":79, "localhost:19002":81}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":86, "localhost:19001":79, "localhost:19002":81}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":87, "localhost:19001":79, "localhost:19002":81}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":88, "localhost:19001":79, "localhost:19002":81}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":89, "localhost:19001":79, "localhost:19002":81}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":90, "localhost:19001":79, "localhost:19002":81}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":91, "localhost:19001":85, "localhost:19002":87}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":92, "localhost:19001":85, "localhost:19002":87}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":93, "localhost:19001":87, "localhost:19002":87}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":94, "localhost:19001":88, "localhost:19002":87}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":95, "localhost:19001":88, "localhost:19002":87}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":96, "localhost:19001":91, "localhost:19002":90}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":97, "localhost:19001":91, "localhost:19002":90}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":98, "localhost:19001":91, "localhost:19002":90}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":99, "localhost:19001":91, "localhost:19002":90}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":100, "localhost:19001":91, "localhost:19002":90}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":101, "localhost:19001":91, "localhost:19002":90}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":102, "localhost:19001":91, "localhost:19002":90}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":103, "localhost:19001":91, "localhost:19002":90}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":104, "localhost:19001":99, "localhost:19002":91}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":105, "localhost:19001":99, "localhost:19002":99}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":106, "localhost:19001":100, "localhost:19002":99}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":107, "localhost:19001":100, "localhost:19002":99}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":108, "localhost:19001":103, "localhost:19002":102}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":109, "localhost:19001":103, "localhost:19002":102}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":110, "localhost:19001":103, "localhost:19002":102}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":111, "localhost:19001":103, "localhost:19002":102}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":112, "localhost:19001":103, "localhost:19002":102}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":113, "localhost:19001":103, "localhost:19002":102}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":114, "localhost:19001":103, "localhost:19002":102}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":115, "localhost:19001":103, "localhost:19002":102}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":116, "localhost:19001":111, "localhost:19002":103}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":117, "localhost:19001":111, "localhost:19002":111}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":118, "localhost:19001":112, "localhost:19002":111}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":119, "localhost:19001":112, "localhost:19002":111}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":120, "localhost:19001":115, "localhost:19002":114}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":121, "localhost:19001":115, "localhost:19002":114}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":122, "localhost:19001":115, "localhost:19002":114}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":123, "localhost:19001":115, "localhost:19002":114}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":124, "localhost:19001":115, "localhost:19002":114}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":125, "localhost:19001":115, "localhost:19002":114}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":126, "localhost:19001":115, "localhost:19002":114}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":127, "localhost:19001":115, "localhost:19002":114}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":128, "localhost:19001":123, "localhost:19002":115}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":129, "localhost:19001":123, "localhost:19002":123}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":130, "localhost:19001":124, "localhost:19002":123}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":131, "localhost:19001":124, "localhost:19002":123}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":132, "localhost:19001":127, "localhost:19002":128}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":133, "localhost:19001":127, "localhost:19002":128}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":134, "localhost:19001":127, "localhost:19002":128}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":135, "localhost:19001":127, "localhost:19002":128}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":136, "localhost:19001":127, "localhost:19002":128}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":128}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":138, "localhost:19001":127, "localhost:19002":128}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":139, "localhost:19001":127, "localhost:19002":128}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":140, "localhost:19001":127, "localhost:19002":134}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":141, "localhost:19001":127, "localhost:19002":135}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":142, "localhost:19001":127, "localhost:19002":135}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":143, "localhost:19001":127, "localhost:19002":135}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":144, "localhost:19001":127, "localhost:19002":135}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":145, "localhost:19001":127, "localhost:19002":135}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":146, "localhost:19001":127, "localhost:19002":135}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":147, "localhost:19001":127, "localhost:19002":135}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":148, "localhost:19001":127, "localhost:19002":135}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":149, "localhost:19001":127, "localhost:19002":143}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":150, "localhost:19001":127, "localhost:19002":143}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":151, "localhost:19001":127, "localhost:19002":143}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":152, "localhost:19001":127, "localhost:19002":143}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":153, "localhost:19001":127, "localhost:19002":143}
+Received on localhost:19000
+localhost:19000 {"localhost:19000":154, "localhost:19001":127, "localhost:19002":143}
+Sending from localhost:19000
+localhost:19000 {"localhost:19000":155, "localhost:19001":127, "localhost:19002":143}
+Received on localhost:19000
+localhost:19001 {"localhost:19001":1}
+Initialization Complete
+localhost:19001 {"localhost:19000":2, "localhost:19001":2}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":2, "localhost:19001":3}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":2, "localhost:19001":4}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":2, "localhost:19001":5}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":2, "localhost:19001":6}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":2, "localhost:19001":7}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":2, "localhost:19001":8}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":11, "localhost:19001":9, "localhost:19002":3}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":11, "localhost:19001":10, "localhost:19002":3}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":11, "localhost:19001":11, "localhost:19002":5}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":11, "localhost:19001":12, "localhost:19002":7}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":11, "localhost:19001":13, "localhost:19002":7}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":17, "localhost:19001":14, "localhost:19002":7}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":17, "localhost:19001":15, "localhost:19002":7}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":17, "localhost:19001":16, "localhost:19002":7}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":17, "localhost:19001":17, "localhost:19002":7}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":17, "localhost:19001":18, "localhost:19002":7}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":7}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":23, "localhost:19001":20, "localhost:19002":15}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":23, "localhost:19001":21, "localhost:19002":15}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":23, "localhost:19001":22, "localhost:19002":15}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":23, "localhost:19001":23, "localhost:19002":17}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":23, "localhost:19001":24, "localhost:19002":18}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":23, "localhost:19001":25, "localhost:19002":18}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":29, "localhost:19001":26, "localhost:19002":20}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":29, "localhost:19001":27, "localhost:19002":20}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":29, "localhost:19001":28, "localhost:19002":20}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":29, "localhost:19001":29, "localhost:19002":20}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":29, "localhost:19001":30, "localhost:19002":20}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":29, "localhost:19001":31, "localhost:19002":20}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":35, "localhost:19001":32, "localhost:19002":27}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":35, "localhost:19001":33, "localhost:19002":27}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":35, "localhost:19001":34, "localhost:19002":27}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":35, "localhost:19001":35, "localhost:19002":29}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":35, "localhost:19001":36, "localhost:19002":31}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":35, "localhost:19001":37, "localhost:19002":31}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":40, "localhost:19001":38, "localhost:19002":31}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":40, "localhost:19001":39, "localhost:19002":31}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":40, "localhost:19001":40, "localhost:19002":31}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":40, "localhost:19001":41, "localhost:19002":31}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":40, "localhost:19001":42, "localhost:19002":31}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":40, "localhost:19001":43, "localhost:19002":31}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":40, "localhost:19001":44, "localhost:19002":31}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":47, "localhost:19001":45, "localhost:19002":39}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":47, "localhost:19001":46, "localhost:19002":39}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":47, "localhost:19001":47, "localhost:19002":41}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":47, "localhost:19001":48, "localhost:19002":43}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":47, "localhost:19001":49, "localhost:19002":43}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":52, "localhost:19001":50, "localhost:19002":43}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":52, "localhost:19001":51, "localhost:19002":43}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":52, "localhost:19001":52, "localhost:19002":43}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":52, "localhost:19001":53, "localhost:19002":43}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":52, "localhost:19001":54, "localhost:19002":43}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":52, "localhost:19001":55, "localhost:19002":43}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":52, "localhost:19001":56, "localhost:19002":43}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":59, "localhost:19001":57, "localhost:19002":51}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":59, "localhost:19001":58, "localhost:19002":51}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":59, "localhost:19001":59, "localhost:19002":53}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":59, "localhost:19001":60, "localhost:19002":55}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":59, "localhost:19001":61, "localhost:19002":55}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":64, "localhost:19001":62, "localhost:19002":55}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":64, "localhost:19001":63, "localhost:19002":55}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":64, "localhost:19001":64, "localhost:19002":55}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":64, "localhost:19001":65, "localhost:19002":55}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":64, "localhost:19001":66, "localhost:19002":55}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":64, "localhost:19001":67, "localhost:19002":55}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":71, "localhost:19001":68, "localhost:19002":63}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":71, "localhost:19001":69, "localhost:19002":63}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":71, "localhost:19001":70, "localhost:19002":63}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":71, "localhost:19001":71, "localhost:19002":65}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":71, "localhost:19001":72, "localhost:19002":67}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":71, "localhost:19001":73, "localhost:19002":67}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":76, "localhost:19001":74, "localhost:19002":67}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":76, "localhost:19001":75, "localhost:19002":67}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":76, "localhost:19001":76, "localhost:19002":67}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":76, "localhost:19001":77, "localhost:19002":67}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":76, "localhost:19001":78, "localhost:19002":67}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":76, "localhost:19001":79, "localhost:19002":67}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":83, "localhost:19001":80, "localhost:19002":75}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":83, "localhost:19001":81, "localhost:19002":75}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":83, "localhost:19001":82, "localhost:19002":75}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":83, "localhost:19001":83, "localhost:19002":77}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":83, "localhost:19001":84, "localhost:19002":78}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":83, "localhost:19001":85, "localhost:19002":78}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":89, "localhost:19001":86, "localhost:19002":81}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":89, "localhost:19001":87, "localhost:19002":81}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":89, "localhost:19001":88, "localhost:19002":81}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":89, "localhost:19001":89, "localhost:19002":81}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":89, "localhost:19001":90, "localhost:19002":81}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":89, "localhost:19001":91, "localhost:19002":81}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":89, "localhost:19001":92, "localhost:19002":81}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":95, "localhost:19001":93, "localhost:19002":87}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":95, "localhost:19001":94, "localhost:19002":87}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":95, "localhost:19001":95, "localhost:19002":89}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":95, "localhost:19001":96, "localhost:19002":91}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":95, "localhost:19001":97, "localhost:19002":91}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":100, "localhost:19001":98, "localhost:19002":91}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":100, "localhost:19001":99, "localhost:19002":91}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":100, "localhost:19001":100, "localhost:19002":91}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":100, "localhost:19001":101, "localhost:19002":91}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":100, "localhost:19001":102, "localhost:19002":91}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":100, "localhost:19001":103, "localhost:19002":91}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":107, "localhost:19001":104, "localhost:19002":99}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":107, "localhost:19001":105, "localhost:19002":99}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":107, "localhost:19001":106, "localhost:19002":99}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":107, "localhost:19001":107, "localhost:19002":101}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":107, "localhost:19001":108, "localhost:19002":103}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":107, "localhost:19001":109, "localhost:19002":103}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":112, "localhost:19001":110, "localhost:19002":103}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":112, "localhost:19001":111, "localhost:19002":103}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":112, "localhost:19001":112, "localhost:19002":103}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":112, "localhost:19001":113, "localhost:19002":103}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":112, "localhost:19001":114, "localhost:19002":103}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":112, "localhost:19001":115, "localhost:19002":103}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":112, "localhost:19001":116, "localhost:19002":103}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":119, "localhost:19001":117, "localhost:19002":111}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":119, "localhost:19001":118, "localhost:19002":111}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":119, "localhost:19001":119, "localhost:19002":113}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":119, "localhost:19001":120, "localhost:19002":115}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":119, "localhost:19001":121, "localhost:19002":115}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":124, "localhost:19001":122, "localhost:19002":115}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":124, "localhost:19001":123, "localhost:19002":115}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":124, "localhost:19001":124, "localhost:19002":115}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":124, "localhost:19001":125, "localhost:19002":115}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":124, "localhost:19001":126, "localhost:19002":115}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":124, "localhost:19001":127, "localhost:19002":115}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":124, "localhost:19001":128, "localhost:19002":115}
+Sending from localhost:19001
+localhost:19001 {"localhost:19000":131, "localhost:19001":129, "localhost:19002":123}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":131, "localhost:19001":130, "localhost:19002":123}
+Received on localhost:19001
+localhost:19001 {"localhost:19000":131, "localhost:19001":131, "localhost:19002":125}
+Received on localhost:19001
+localhost:19002 {"localhost:19002":1}
+Initialization Complete
+localhost:19002 {"localhost:19000":3, "localhost:19002":2}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":3, "localhost:19002":3}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":3, "localhost:19001":7, "localhost:19002":4}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":3, "localhost:19001":7, "localhost:19002":5}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":3, "localhost:19001":7, "localhost:19002":6}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":3, "localhost:19001":7, "localhost:19002":7}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":3, "localhost:19001":7, "localhost:19002":8}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":3, "localhost:19001":7, "localhost:19002":9}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":13, "localhost:19001":7, "localhost:19002":10}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":13, "localhost:19001":7, "localhost:19002":11}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":13, "localhost:19001":13, "localhost:19002":12}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":13, "localhost:19001":13, "localhost:19002":13}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":14, "localhost:19001":13, "localhost:19002":14}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":14, "localhost:19001":13, "localhost:19002":15}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":16}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":17}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":18}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":19}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":20}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":21}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":17, "localhost:19001":19, "localhost:19002":22}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":23, "localhost:19001":25, "localhost:19002":23}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":25, "localhost:19001":25, "localhost:19002":24}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":25, "localhost:19001":25, "localhost:19002":25}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":26, "localhost:19001":25, "localhost:19002":26}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":26, "localhost:19001":25, "localhost:19002":27}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":29, "localhost:19001":31, "localhost:19002":28}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":29, "localhost:19001":31, "localhost:19002":29}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":29, "localhost:19001":31, "localhost:19002":30}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":29, "localhost:19001":31, "localhost:19002":31}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":29, "localhost:19001":31, "localhost:19002":32}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":29, "localhost:19001":31, "localhost:19002":33}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":37, "localhost:19001":31, "localhost:19002":34}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":37, "localhost:19001":31, "localhost:19002":35}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":37, "localhost:19001":37, "localhost:19002":36}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":37, "localhost:19001":37, "localhost:19002":37}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":37, "localhost:19002":38}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":37, "localhost:19002":39}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":43, "localhost:19002":40}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":43, "localhost:19002":41}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":43, "localhost:19002":42}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":43, "localhost:19002":43}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":43, "localhost:19002":44}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":41, "localhost:19001":43, "localhost:19002":45}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":49, "localhost:19001":43, "localhost:19002":46}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":49, "localhost:19001":43, "localhost:19002":47}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":49, "localhost:19001":49, "localhost:19002":48}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":49, "localhost:19001":49, "localhost:19002":49}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":49, "localhost:19002":50}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":49, "localhost:19002":51}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":55, "localhost:19002":52}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":55, "localhost:19002":53}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":55, "localhost:19002":54}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":55, "localhost:19002":55}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":55, "localhost:19002":56}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":53, "localhost:19001":55, "localhost:19002":57}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":61, "localhost:19001":55, "localhost:19002":58}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":61, "localhost:19001":55, "localhost:19002":59}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":61, "localhost:19001":61, "localhost:19002":60}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":61, "localhost:19001":61, "localhost:19002":61}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":61, "localhost:19002":62}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":61, "localhost:19002":63}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":67, "localhost:19002":64}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":67, "localhost:19002":65}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":67, "localhost:19002":66}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":67, "localhost:19002":67}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":67, "localhost:19002":68}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":65, "localhost:19001":67, "localhost:19002":69}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":73, "localhost:19001":67, "localhost:19002":70}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":73, "localhost:19001":67, "localhost:19002":71}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":73, "localhost:19001":73, "localhost:19002":72}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":73, "localhost:19001":73, "localhost:19002":73}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":73, "localhost:19002":74}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":73, "localhost:19002":75}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":79, "localhost:19002":76}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":79, "localhost:19002":77}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":79, "localhost:19002":78}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":79, "localhost:19002":79}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":79, "localhost:19002":80}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":77, "localhost:19001":79, "localhost:19002":81}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":83, "localhost:19001":85, "localhost:19002":82}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":83, "localhost:19001":85, "localhost:19002":83}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":83, "localhost:19001":85, "localhost:19002":84}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":85, "localhost:19001":85, "localhost:19002":85}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":86, "localhost:19001":85, "localhost:19002":86}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":86, "localhost:19001":85, "localhost:19002":87}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":89, "localhost:19001":91, "localhost:19002":88}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":89, "localhost:19001":91, "localhost:19002":89}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":89, "localhost:19001":91, "localhost:19002":90}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":89, "localhost:19001":91, "localhost:19002":91}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":89, "localhost:19001":91, "localhost:19002":92}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":89, "localhost:19001":91, "localhost:19002":93}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":97, "localhost:19001":91, "localhost:19002":94}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":97, "localhost:19001":91, "localhost:19002":95}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":97, "localhost:19001":97, "localhost:19002":96}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":97, "localhost:19001":97, "localhost:19002":97}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":97, "localhost:19002":98}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":97, "localhost:19002":99}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":103, "localhost:19002":100}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":103, "localhost:19002":101}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":103, "localhost:19002":102}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":103, "localhost:19002":103}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":103, "localhost:19002":104}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":101, "localhost:19001":103, "localhost:19002":105}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":109, "localhost:19001":103, "localhost:19002":106}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":109, "localhost:19001":103, "localhost:19002":107}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":109, "localhost:19001":109, "localhost:19002":108}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":109, "localhost:19001":109, "localhost:19002":109}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":109, "localhost:19002":110}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":109, "localhost:19002":111}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":115, "localhost:19002":112}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":115, "localhost:19002":113}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":115, "localhost:19002":114}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":115, "localhost:19002":115}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":115, "localhost:19002":116}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":113, "localhost:19001":115, "localhost:19002":117}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":121, "localhost:19001":115, "localhost:19002":118}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":121, "localhost:19001":115, "localhost:19002":119}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":121, "localhost:19001":121, "localhost:19002":120}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":121, "localhost:19001":121, "localhost:19002":121}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":121, "localhost:19002":122}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":121, "localhost:19002":123}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":124}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":125}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":126}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":127}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":128}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":129}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":130}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":125, "localhost:19001":127, "localhost:19002":131}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":133, "localhost:19001":127, "localhost:19002":132}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":133}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":134}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":135}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":136}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":137}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":138}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":139}
+Sending from localhost:19002
+localhost:19002 {"localhost:19000":137, "localhost:19001":127, "localhost:19002":140}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":142, "localhost:19001":127, "localhost:19002":141}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":143, "localhost:19001":127, "localhost:19002":142}
+Received on localhost:19002
+localhost:19002 {"localhost:19000":143, "localhost:19001":127, "localhost:19002":143}
+Sending from localhost:19002
