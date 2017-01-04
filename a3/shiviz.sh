@@ -1,4 +1,5 @@
 #!/bin/bash
+rm [a-z]-*
 FILE=Shiviz.log
 echo '(?<host>\S*) (?<clock>{.*})\n(?<event>.*)' > $FILE
 echo -e "\n" >> $FILE
